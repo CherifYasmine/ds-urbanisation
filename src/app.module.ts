@@ -18,8 +18,8 @@ import { DataSource } from 'typeorm';
     }),
     TypeOrmModule.forFeature([]),
   ],
-  controllers: [AppController, ],
-  providers: [AppService, ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {
   constructor(private dataSource: DataSource) { }
