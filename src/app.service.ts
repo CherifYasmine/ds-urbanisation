@@ -9,15 +9,15 @@ export class AppService {
    month = ["Invalid Number",'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     n = 0
   dayOfWeek(number): string{
-    if(number > 7){
-      return("Invalid Number")
+    if(number > 7 || number ===0){
+      return(this.week[0])
     }else{      
       return(this.week[number])
     }
   }
   monthOfYear(number): string{
-    if(number > 12){
-      return("Invalid Number")
+    if(number > 12 || number ===0){
+      return(this.month[0])
     }else{
       return(this.month[number])
     }
