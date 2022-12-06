@@ -1,0 +1,30 @@
+#%RAML 1.0
+title: ds_urban_raml
+version: v1
+baseUri: htt^://localhost:3000
+
+traits:
+  dateinput:
+    queryParameters:
+      weekday: number
+      daymonth: number
+      yearmonth: number
+      year: number
+      
+resourceTypes:
+  Member:
+    get:
+      is : [dateinput]
+      body:
+        application/json:
+          type: <<item>>
+          
+types:
+  Date:
+    properties:
+      date: string
+    example:
+      date: Monday, March 12, 2019
+
+/date:
+  type: { Member: { item: Date } }

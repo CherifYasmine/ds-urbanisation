@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="date" format="json">
+      <types:shape format="weave" example="examples/data_example.json"><![CDATA[%dw 2.0
+
+type date = {| date: String |} {"example": "{\\\"date\\\":\\\"Monday, March 12, 2019\\\"}"}
+
+]]></types:shape>
+    </types:type>
+    <types:type name="datess" format="java">
+      <types:shape format="raml"><![CDATA[#%RAML 1.0 DataType
+type: string]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#7544804b-03b3-49f6-9046-14241778a9a7">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="date"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>
